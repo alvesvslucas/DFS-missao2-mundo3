@@ -1,25 +1,33 @@
-# Documentação do Projeto de Banco de Dados SQL
+# Missão 2 — Modelagem de Banco de Dados SQL
 
-## Visão Geral
+Material acadêmico sobre modelagem relacional e comandos SQL para um sistema de loja.
 
-Este repositório contém os scripts SQL e a documentação associada à Missão Prática realizada como parte do currículo acadêmico. O objetivo é demonstrar a aplicação prática dos conceitos de banco de dados, incluindo modelagem de dados, manipulação de dados e consultas SQL.
+**Contato indicado no projeto:** Lucas Alves — [Contato pelo GitHub](https://github.com/alvesvslucas).
 
-## Licença e Uso
+## Estrutura real do repositório
 
-O conteúdo deste repositório é destinado exclusivamente para fins educacionais. Qualquer reprodução, distribuição ou uso deste material fora do escopo acadêmico requer autorização prévia.
+| Caminho | Conteúdo |
+| --- | --- |
+| `SQL/loja.sql` | Script SQL da atividade |
+| `PDF/` | Documentos da entrega |
+| `img/` | Imagens de apoio |
 
-## Estrutura do Repositório
+O início do script define tabelas de usuários e pessoas, incluindo pessoas físicas e jurídicas com chaves estrangeiras.
 
-- `scripts/`: Contém todos os scripts SQL utilizados para criar tabelas, inserir dados e realizar consultas.
-- `documentacao/`: Inclui arquivos de documentação que explicam a estrutura do banco de dados e as decisões de design tomadas.
+## Como estudar e preparar a execução
 
-## Contato e Suporte
+```sh
+git clone https://github.com/alvesvslucas/DFS-missao2-mundo3.git
+cd DFS-missao2-mundo3
+```
 
-Em caso de dúvidas ou necessidade de suporte relacionado ao conteúdo deste repositório, favor entrar em contato com:
+1. Leia a documentação de `PDF/` e revise `SQL/loja.sql` em um editor.
+2. Confirme o SGBD e sua versão para a atividade; esses requisitos não foram determinados pela revisão do trecho de criação de tabelas.
+3. Antes de executar, confira todas as instruções e dados do arquivo e use uma base acadêmica isolada, sem dados reais.
+4. Execute o script na ferramenta SQL do SGBD escolhido, respeitando a ordem das dependências entre tabelas.
 
-- **Nome:** Lucas Alves
-- **E-mail:** [lucasalvesvs016@gmail.com.com](mailto:lucasalvesvs016@gmail.com)
+O repositório não apresenta uma aplicação web para iniciar por este README. A execução do SQL e a compatibilidade com um SGBD específico não foram testadas nesta revisão.
 
-## Aviso
+## Licença e uso
 
-🔒 Este repositório é de acesso privado e destinado unicamente à avaliação acadêmica. Por favor, não compartilhe seu conteúdo sem a devida autorização.
+Mantêm-se os termos declarados no README original: conteúdo destinado exclusivamente a fins educacionais; reprodução, distribuição ou uso fora do escopo acadêmico requer autorização prévia.
