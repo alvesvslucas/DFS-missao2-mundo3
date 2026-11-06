@@ -1,0 +1,26 @@
+name: Compatibilidade sintática T-SQL (sem banco)
+# O SGBD original ainda não foi declarado. Este diagnóstico não é homologação SQL.
+on:
+  push:
+    branches: [main]
+    paths: ['SQL/**', 'tests/SqlSyntaxCheck/**', '.github/workflows/sql-tsql-compatibility.yml']
+  pull_request:
+    paths: ['SQL/**', 'tests/SqlSyntaxCheck/**', '.github/workflows/sql-tsql-compatibility.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  syntax-compatibility:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - name: Restaurar somente a biblioteca parser oficial Microsoft
+        run: dotnet restore tests/SqlSyntaxCheck/SqlSyntaxCheck.csproj --source https://api.nuget.org/v3/index.json
+      - name: Analisar gramática T-SQL sem executar SQL ou imprimir registros
+        run: dotnet run --project tests/SqlSyntaxCheck/SqlSyntaxCheck.csproj --configuration Release --no-restore -- SQL/loja.sql
